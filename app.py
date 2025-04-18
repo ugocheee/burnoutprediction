@@ -18,4 +18,7 @@ if wfh == "No":
 if gender == "Male":
     burn_rate += 0.005
 
+# Cap burn rate between 0 and 1
+burn_rate = min(max(burn_rate, 0), 1)
+
 st.subheader(f"Predicted Burn Rate: {round(burn_rate, 2)}")
