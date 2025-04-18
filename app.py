@@ -2,7 +2,7 @@
 import streamlit as st
 import numpy as np
 
-st.title("Employee Burnout Predictor (Real Model)")
+st.title("Employee Burnout Predictor by Ugochi")
 
 fatigue = st.slider("Mental Fatigue Score", 0.0, 10.0, 5.0)
 resources = st.slider("Resource Allocation", 1, 10, 5)
