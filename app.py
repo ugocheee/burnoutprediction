@@ -2,7 +2,7 @@
 import streamlit as st
 import numpy as np
 
-st.title("Employee Burnout Predictor")
+st.title("Employee Burnout Predictor (Real Model)")
 
 fatigue = st.slider("Mental Fatigue Score", 0.0, 10.0, 5.0)
 resources = st.slider("Resource Allocation", 1, 10, 5)
@@ -12,13 +12,19 @@ company_type = st.selectbox("Company Type", ["Product", "Service"])
 gender = st.selectbox("Gender", ["Male", "Female"])
 years = st.slider("Years in Current Company", 0.0, 20.0, 5.0)
 
-burn_rate = 0.1 + 0.03 * resources + 0.07 * fatigue + 0.009 * designation
-if wfh == "No":
-    burn_rate += 0.02
-if gender == "Male":
-    burn_rate += 0.005
+# Burnout prediction using real model coefficients from R
+burn_rate = (
+    -0.1031
+    + 0.0068 * (1 if gender == "Male" else 0)
+    + 0.00003 * (1 if company_type == "Service" else 0)
+    - 0.0171 * (1 if wfh == "Yes" else 0)
+    + 0.00896 * designation
+    + 0.0309 * resources
+    + 0.0672 * fatigue
+    + 0.00108 * years
+)
 
-# Cap burn rate between 0 and 1
+# Cap prediction between 0 and 1
 burn_rate = min(max(burn_rate, 0), 1)
 
 st.subheader(f"Predicted Burn Rate: {round(burn_rate, 2)}")
