@@ -3,20 +3,20 @@ import numpy as np
 
 st.markdown("""
     <style>
-    /* Change active range bar (filled track) */
-    .stSlider > div[data-baseweb="slider"] .rc-slider-track {
-        background-color: #1f77b4;
+    /* Target the filled track of the slider */
+    div[data-baseweb="slider"] .rc-slider-track {
+        background-color: #1f77b4 !important;
     }
 
-    /* Change handle (the circle you drag) */
-    .stSlider > div[data-baseweb="slider"] .rc-slider-handle {
-        background-color: #1f77b4;
-        border: 2px solid #1f77b4;
+    /* Target the slider handle */
+    div[data-baseweb="slider"] .rc-slider-handle {
+        background-color: #1f77b4 !important;
+        border: 2px solid #1f77b4 !important;
     }
 
-    /* Optional: change unfilled track */
-    .stSlider > div[data-baseweb="slider"] .rc-slider-rail {
-        background-color: #d6eaf8;
+    /* Target the unfilled track */
+    div[data-baseweb="slider"] .rc-slider-rail {
+        background-color: #e0f0ff !important;
     }
     </style>
 """, unsafe_allow_html=True)
