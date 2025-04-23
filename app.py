@@ -1,6 +1,27 @@
 import streamlit as st
 import numpy as np
 
+st.markdown("""
+    <style>
+    /* Change active range bar (filled track) */
+    .stSlider > div[data-baseweb="slider"] .rc-slider-track {
+        background-color: #1f77b4;
+    }
+
+    /* Change handle (the circle you drag) */
+    .stSlider > div[data-baseweb="slider"] .rc-slider-handle {
+        background-color: #1f77b4;
+        border: 2px solid #1f77b4;
+    }
+
+    /* Optional: change unfilled track */
+    .stSlider > div[data-baseweb="slider"] .rc-slider-rail {
+        background-color: #d6eaf8;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 st.title("Jaguar is here to help")
 st.subheader("Enter team member information")
 
