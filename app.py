@@ -1,7 +1,8 @@
 import streamlit as st
 import numpy as np
 
-st.title("Jaguar is here to help you and your team")
+st.title("Jaguar is here to help")
+st.subheader("Enter team member information")
 
 fatigue = st.slider("Mental Fatigue Score", 0.0, 10.0, 5.0)
 resources = st.slider("Resource Allocation", 1, 10, 5)
