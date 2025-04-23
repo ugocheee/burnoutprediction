@@ -57,4 +57,4 @@ else:
     message = f"🔥 Predicted Burn Rate: {burn_score}\n\n🚨 Take action today. This employee is burned out!"
 
 st.subheader(message)
-st.subheader("Jaguar by Ugochi")
+st.("Jaguar by Ugochi")
