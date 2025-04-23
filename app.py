@@ -1,6 +1,22 @@
 import streamlit as st
 import numpy as np
 
+# Add this near the top of your Streamlit script (after imports)
+st.markdown("""
+    <style>
+    /* Change slider color */
+    .stSlider > div[data-baseweb="slider"] .css-14g5kz0 {
+        background: #1f77b4;  /* Blue track color */
+    }
+    .stSlider > div[data-baseweb="slider"] .css-1lv4goc {
+        background-color: #1f77b4 !important; /* Blue handle */
+    }
+    .stSlider > div[data-baseweb="slider"] .css-1r6slb0 {
+        background-color: #1f77b4; /* Active range */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("Jaguar by Ugochi")
 
 fatigue = st.slider("Mental Fatigue Score", 0.0, 10.0, 5.0)
