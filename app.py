@@ -23,7 +23,15 @@ burn_rate = (
     + 0.00108 * years
 )
 
-# Cap prediction between 0 and 1
-burn_rate = min(max(burn_rate, 0), 1)
+# Scale to 0–10 range for easier interpretation
+burn_score = round(burn_rate * 10, 2)
 
-st.subheader(f"Predicted Burn Rate: {round(burn_rate, 2)}")
+# Display appropriate message
+if burn_score <= 4.5:
+    message = f"🔥 Predicted Burn Rate: {burn_score}\n\n✅ You should be good. No signs of burnout."
+elif 4.5 < burn_score <= 6.5:
+    message = f"🔥 Predicted Burn Rate: {burn_score}\n\n⚠️ Watch out. This employee may be at risk. Take action soon."
+else:
+    message = f"🔥 Predicted Burn Rate: {burn_score}\n\n🚨 Take action today. This employee is burned out!"
+
+st.subheader(message)
